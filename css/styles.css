@@ -50,6 +50,10 @@ ul {
   padding: 0;
 }
 
+main {
+  padding-top: 72px;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -76,8 +80,10 @@ ul {
   width: 1158px;
   margin: 0 auto;
   padding: 0 15px;
-  /* display: flex;
-  justify-content: space-between; */
+}
+
+input {
+  outline: none;
 }
 
 p {
@@ -87,24 +93,43 @@ p {
   letter-spacing: 0.02em;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 a,
 button {
   cursor: pointer;
 }
 
-.button:hover {
-  color: var(--pressed-state);
+.button-introduce,
+.form-button,
+.footer-subscribe-btn {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--primary-brand);
+  color: var(--white-background);
+  font-family: Roboto, sans-serif;
+  width: fit-content;
+  padding: 16px 32px;
+  min-width: 169px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button:focus,
-.button:active {
-  background-color: var(--pressed-state);
-}
-
+.button:hover,
 .social-link:hover {
   background-color: var(--pressed-state);
 }
 
+.button:focus,
+.button:active,
 .social-link:focus,
 .social-link:active {
   background-color: var(--pressed-state);
@@ -131,6 +156,8 @@ button {
 .header {
   background-color: var(--white-background);
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
   z-index: 999;
@@ -247,7 +274,7 @@ nav > a {
   padding: 188px 0;
   color: var(--white-background);
   max-width: 1440px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .introduce .container {
@@ -266,23 +293,6 @@ nav > a {
   text-align: center;
   margin-bottom: 48px;
   max-width: 496px;
-}
-
-.button-introduce {
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 0.04em;
-  line-height: 1.5;
-  text-align: center;
-  border: none;
-  border-radius: 4px;
-  background-color: var(--primary-brand);
-  color: var(--white-background);
-  font-family: Roboto, sans-serif;
-  width: fit-content;
-  padding: 16px 32px;
-  min-width: 169px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-introduce:hover {
@@ -687,6 +697,128 @@ nav > a {
 .modal-btn:focus .icon-modal {
   fill: var(--white-background);
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 72px 24px 24px 24px;
+}
+
+.form-group {
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.group-title {
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.input-lable {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.48px;
+  color: var(--subtl-text);
+}
+
+.form-item:focus-visible {
+  border-color: none;
+  outline: none;
+}
+
+.form-item {
+  padding: 11px 36px;
+  margin-top: 4px;
+  border-radius: 4px;
+  border: 1px solid var(--subtl-text);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-icon {
+  position: absolute;
+  left: 10%;
+  fill: var(--dark);
+  transform: translateY(103%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-item:focus {
+  border-color: var(--primary-brand);
+}
+
+.form-item:focus + .form-icon {
+  fill: var(--primary-brand);
+}
+
+.checkbox-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 24px;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.user-confirm-label {
+  display: flex;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: var(--subtl-text);
+}
+
+.check-link {
+  color: var(--pressed-state);
+  text-decoration: underline;
+}
+
+.check-box {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--subtl-text);
+  border-radius: 2px;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  fill: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-check-hidden:checked + .user-confirm-label .check-box {
+  background-color: var(--pressed-state);
+  border: none;
+  fill: var(--light);
+}
+
+.check-link {
+  margin-left: 4px;
+  text-decoration: underline;
+}
+
+.form-item.form-comment {
+  resize: none;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  width: 360px;
+  height: 120px;
+}
+
+.form-comment::placeholder {
+  color: var(--subtl-text);
+}
+
+.form-button {
+  margin: 0 auto;
+}
 /* Modal section style */
 
 /* --------------------------------------------------------------------- */
@@ -719,6 +851,10 @@ nav > a {
   display: inline-block;
 }
 
+.footer .logo {
+  margin-bottom: 17.5px;
+}
+
 .footer-logo,
 .footer-p {
   color: var(--light);
@@ -730,10 +866,14 @@ nav > a {
   max-width: 264px;
 }
 
-.footer-social-p {
+.footer-p-title {
   font-weight: 500;
   margin-bottom: 16px;
   color: var(--white-background);
+}
+
+.social-block {
+  margin-right: 80px;
 }
 
 .social-list-footer {
@@ -761,6 +901,34 @@ nav > a {
 .footer .social-link:active,
 .footer .social-link:focus {
   background-color: var(--sucess);
+}
+
+.form-subscribe {
+  display: flex;
+}
+
+.footer-email-input {
+  width: 264px;
+  height: 40px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid var(--white-background, #fff);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  color: var(--white-background);
+  background-color: var(--dark);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin-right: 24px;
+}
+
+.footer-email-input::placeholder {
+  color: var(--white-background);
+}
+
+.footer-subscribe-btn {
+  padding: 8px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
 }
 
 /* End Footer style */
