@@ -768,7 +768,7 @@ nav > a {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
-  color: var(--subtl-text);
+  color: var(--modal-background);
   border: 1px solid var(--modal-background);
   border-radius: 4px;
   background-color: transparent;
