@@ -390,10 +390,15 @@
           </ul>
         </div>
         <div class="subscribe-block">
-          <p for="subcribe-input" class="footer-p footer-title">Subscribe</p>
+          <p class="footer-p footer-title">Subscribe</p>
           <form action="#" class="form-subscribe">
-            <label class="footer-describe-label">
-              <input id="subcribe-input" type="email" class="footer-email-input" placeholder="E-mail" />
+            <label class="footer-describe-label" for="subcribe-input">
+              <input
+                id="subcribe-input"
+                type="email"
+                name="footer-subscribe-email"
+                class="footer-email-input"
+                placeholder="E-mail" />
             </label>
             <button class="button footer-subscribe-btn" type="submit">
               Subscribe
@@ -449,7 +454,7 @@
             <textarea
               id="user-comment"
               class="form-comment"
-              name="comment"
+              name="user-comment"
               cols="30"
               rows="10"
               placeholder="Text input">
